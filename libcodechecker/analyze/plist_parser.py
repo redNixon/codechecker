@@ -137,8 +137,6 @@ def parse_plist(path, source_root=None, allow_plist_update=True):
             plistlib.writePlist(plist, path)
     except (ExpatError, TypeError, AttributeError) as err:
         LOG.warning('Failed to process plist file: %s wrong file format? %s' % (path, err))
-        import ipdb; ipdb.set_trace() # noqa
-        LOG.warning('------------------grepforme: %s' % err)
     except IndexError as iex:
         LOG.warning('Indexing error during processing plist file %s', path)
         LOG.warning(type(iex))
